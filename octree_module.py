@@ -108,8 +108,45 @@ class OctTree(object):
             return True
 
     def show(self,plt):
-        if self.boundary.y < 0 or self.boundary.y > 0.5:
-            return
+        # if self.boundary.y < 0 or self.boundary.y > 0.5:
+        #     return
+        # if (self.divide):
+        #     self.une.show(plt)
+        #     self.unw.show(plt)
+        #     self.use.show(plt)
+        #     self.usw.show(plt)
+        #     self.lne.show(plt)
+        #     self.lnw.show(plt)
+        #     self.lse.show(plt)
+        #     self.lsw.show(plt)
+        # x = self.boundary.x
+        # y = self.boundary.y
+        # z = self.boundary.z
+        # w = self.boundary.w/2
+        # l = self.boundary.l/2
+        # h = self.boundary.h/2
+        # edges = [[[x-w,x+w],[y-l,y-l],[z-h,z-h]],
+        #          [[x+w,x+w],[y-l,y+l],[z-h,z-h]],
+        #          [[x+w,x-w],[y+l,y+l],[z-h,z-h]],
+        #          [[x-w,x-w],[y+l,y-l],[z-h,z-h]],
+        #          [[x-w,x-w],[y-l,y-l],[z-h,z+h]],
+        #          [[x+w,x+w],[y-l,y-l],[z-h,z+h]],
+        #          [[x+w,x+w],[y+l,y+l],[z-h,z+h]],
+        #          [[x-w,x-w],[y+l,y+l],[z-h,z+h]],
+        #          [[x-w,x+w],[y-l,y-l],[z+h,z+h]],
+        #          [[x+w,x+w],[y-l,y+l],[z+h,z+h]],
+        #          [[x+w,x-w],[y+l,y+l],[z+h,z+h]],
+        #          [[x-w,x-w],[y+l,y-l],[z+h,z+h]]]
+        # for i in range(12):
+        #     plt.plot(edges[i][0][:],edges[i][1][:],edges[i][2][:],'k')
+        # edges = [
+        #         [[x-w,x+w],[y-l,y-l],[z-h,z-h]],
+        #         [[x-w,x-w],[y-l,y-l],[z-h,z+h]],
+        #         [[x+w,x+w],[y-l,y-l],[z-h,z+h]],
+        #         [[x-w,x+w],[y-l,y-l],[z+h,z+h]]
+        #          ]
+        # for i in range(4):
+        #     plt.plot(edges[i][0][:],edges[i][1][:],edges[i][2][:],'k')
         if (self.divide):
             self.une.show(plt)
             self.unw.show(plt)
@@ -125,25 +162,17 @@ class OctTree(object):
         w = self.boundary.w/2
         l = self.boundary.l/2
         h = self.boundary.h/2
-        # edges = [[[x-w,x+w],[y-l,y-l],[z-h,z-h]],
-        #          [[x+w,x+w],[y-l,y+l],[z-h,z-h]],
-        #          [[x+w,x-w],[y+l,y+l],[z-h,z-h]],
-        #          [[x-w,x-w],[y+l,y-l],[z-h,z-h]],
-        #          [[x-w,x-w],[y-l,y-l],[z-h,z+h]],
-        #          [[x+w,x+w],[y-l,y-l],[z-h,z+h]],
-        #          [[x+w,x+w],[y+l,y+l],[z-h,z+h]],
-        #          [[x-w,x-w],[y+l,y+l],[z-h,z+h]],
-        #          [[x-w,x+w],[y-l,y-l],[z+h,z+h]],
-        #          [[x+w,x+w],[y-l,y+l],[z+h,z+h]],
-        #          [[x+w,x-w],[y+l,y+l],[z+h,z+h]],
-        #          [[x-w,x-w],[y+l,y-l],[z+h,z+h]]]
-        # for i in range(12):
-        #     plt.plot(edges[i][0][:],edges[i][1][:],edges[i][2][:],'k')
-        edges = [
-                [[x-w,x+w],[y-l,y-l],[z-h,z-h]],
-                [[x-w,x-w],[y-l,y-l],[z-h,z+h]],
-                [[x+w,x+w],[y-l,y-l],[z-h,z+h]],
-                [[x-w,x+w],[y-l,y-l],[z+h,z+h]]
-                 ]
-        for i in range(4):
+        edges = [[[x-w,x+w],[y-l,y-l],[z-h,z-h]],
+                 [[x+w,x+w],[y-l,y+l],[z-h,z-h]],
+                 [[x+w,x-w],[y+l,y+l],[z-h,z-h]],
+                 [[x-w,x-w],[y+l,y-l],[z-h,z-h]],
+                 [[x-w,x-w],[y-l,y-l],[z-h,z+h]],
+                 [[x+w,x+w],[y-l,y-l],[z-h,z+h]],
+                 [[x+w,x+w],[y+l,y+l],[z-h,z+h]],
+                 [[x-w,x-w],[y+l,y+l],[z-h,z+h]],
+                 [[x-w,x+w],[y-l,y-l],[z+h,z+h]],
+                 [[x+w,x+w],[y-l,y+l],[z+h,z+h]],
+                 [[x+w,x-w],[y+l,y+l],[z+h,z+h]],
+                 [[x-w,x-w],[y+l,y-l],[z+h,z+h]]]
+        for i in range(12):
             plt.plot(edges[i][0][:],edges[i][1][:],edges[i][2][:],'k')
